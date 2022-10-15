@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MisDiscos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+</head>
+<body onselectstart="return false">
+    <header>
+        <nav>
+            <img src="img/logo.png" id="logo" onclick="location.reload()">
+            <button onclick="cargar()">Cargar disco</button>
+            <button onclick="mostrar(discos)">Mostrar todos</button>
+            <input id="buscador" type="search" placeholder="Buscar por identificador o disco" >
+            <input id="oculto" type="hidden" onclick="buscarAlbum()">
+        </nav>
+    </header>
+    <main>
+        <div id="formcontenedor">
+            <h1>Cargar un nuevo disco</h1>
+            <form id="formulario">
+                <label for="disco">Disco</label>
+                <input id="disco" type="text" placeholder="Natural Born Chaos">
+                <label for="autor">Autor</label>
+                <input id="autor" type="text" placeholder="Soilwork">
+                <label class="expandidos" for="codigo">Código único</label>
+                <input id="codigo" type="number" min="1" max="999" value="1">
+                <label for="pista1">Pista 1</label>
+                <input id="pista1" class="nombrepista" type="text" placeholder="Follow the Hollow">
+                <label for="duracion1" class="expandidos">Duración pista 1</label>
+                <input id="duracion1" class="duracion" type="number" min="0" max="7200" value="0">
+            </form>
+            <div id="menudisco">
+                <button class="botonesdisco" onclick="resetForm()">Reset</button>
+                <button class="botonesdisco" onclick="agregarPista()">+ Pistas</button>
+                <button class="botonesdisco" onclick="quitarPista()">- Pistas</button>
+                <button class="botonesdisco" onclick="guardar()">Guardar</button>
+            </div>
+        </div>
+        <section id="items">
+            <!--acá van los discos-->
+        </section>
+    </main>
+    <div id="fondocontenedor"></div>
+    <div id="noresponsive">
+        <p>Esta app no es responsive. Agrandá la ventana.</p>
+    </div>
+    <script src="index.js"></script>
+    <footer>&copy; 2022 Matías Godoy</footer>
+</body>
+</html>

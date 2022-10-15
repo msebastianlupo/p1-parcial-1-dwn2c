@@ -1,0 +1,296 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#333;
+    background-size:cover;
+    color:white;
+    user-select: none;
+}
+
+#logo{
+    position:fixed;
+    top:10px;
+    left:40px;
+    height:40px;
+}
+
+button, #logo{
+    cursor:pointer;
+}
+
+header{
+    z-index:1000;
+    position:fixed;
+    top:0;
+    left:40px;
+    width:calc(100% - 380px);
+    padding:10px 0;
+    background:#333;
+    border-bottom:0.5px solid #444;
+    text-align:right;
+}
+
+nav button{
+    margin-left:5px;
+    height:40px;
+    padding:0 10px;
+    border:none;
+    vertical-align:middle;
+    color:#fff;
+    background:#01888d;
+    border-radius:3px;
+}
+
+nav input{
+    font-size:12px;
+    margin-left:5px;
+    height:40px;
+    width:250px;
+    padding:0 10px;
+    vertical-align:middle;
+    color:#fff;
+    background:transparent;
+    border:1px solid #01888d;
+    font-weight:bold;
+    border-radius:3px;
+}
+
+nav input:focus{
+    background:#006188;
+    border-color:#006188;
+}
+
+nav input::placeholder{
+    color:#ccc;
+}
+
+nav button:hover{
+    background:#006188;
+}
+
+#formcontenedor{
+    position:absolute;
+    z-index:100;
+    top:0;
+    right:0;
+    visibility:hidden;
+    width:300px;
+    min-height:100vh;
+    padding:80px 20px 200px 20px;
+    background:#111;
+    font-size:0;
+    opacity:0;
+    transition:opacity 1s;
+}
+
+#formcontenedor h1{
+    font-weight: normal;
+    font-size:20px;
+    text-align:center;
+    margin-bottom:20px;
+    padding:15px 0;
+    background:#151515;
+    border:0.5px solid #222;
+}
+
+#fondocontenedor{
+    position:fixed;
+    z-index:0;
+    top:0;
+    right:0;
+    width:300px;
+    height:100vh;
+    padding:100px 20px 0;
+    background:#111;
+    box-shadow:0 0 5px #111;
+}
+
+form{
+    font-size:0;
+}
+
+form label{
+    background:#171717;
+    display:inline-block;
+    width:100px;
+    font-size:12px;
+    padding:10px;
+    vertical-align:top;
+    margin-top:15px;
+    color:#aaa;
+}
+
+form input{
+    width:160px;
+    padding:10px;
+    margin-top:15px;
+    font-size:13px;
+    color:white;
+    vertical-align:top;
+    background:#01888d;
+}
+
+form input::placeholder{
+    color:#ccc;
+}
+
+input, input:focus{
+    border:none;
+    outline:none;
+}
+
+form input:focus{
+    box-shadow:inset 0 0 3px #000;
+    background:#006188;
+}
+
+.expandidos{
+    width:190px;
+}
+
+form input[type="number"]{
+    width:70px;
+}
+
+
+#menudisco{
+    position:fixed;
+    bottom:0;
+    right:0;
+    width:300px;
+    height:40px;
+}
+
+.botonesdisco{
+    color:#fff;
+    font-weight:bold;
+    border:none;
+    width:75px;
+    height:40px;
+    background:#222;
+}
+
+.botonesdisco:hover{
+    background:#006188;
+}
+
+#items{
+    position:relative;
+    left:-100vw;
+    width:calc(100% - 300px);
+    margin-top:80px;
+    padding:20px 40px;
+    transition:left 0.3s;
+    word-wrap: break-word;
+}
+
+#items button{
+    margin-left:10px;
+    padding:10px;
+    background:#01888d;
+    color:#fff;
+    border:none;
+    vertical-align:middle;
+    border-radius:3px;
+}
+
+#items button:hover{
+    background:#006188;
+}
+
+.item{
+    font-size:14px;
+    min-height:220px;
+    margin-bottom:20px;
+    padding:0 20px 20px 200px;
+    background:url('img/disco.gif') no-repeat;
+    background-size:150px 150px;
+    border-bottom:0.5px solid #444;
+}
+
+.item p:first-child{
+    padding-top:10px;
+}
+
+.item p{
+    padding:5px 0;
+}
+
+.item:last-of-type{
+    border:none;
+}
+
+footer{
+    font-size:12px;
+    font-weight:bold;
+    right:340px;
+    bottom:10px;
+    position:fixed;
+    width:150px;
+    text-align:right;
+}
+
+#ndiscos{
+    padding-left:200px;
+    margin-bottom:30px;
+}
+
+.normal{
+    padding:0 2px;
+    background:#0a0;
+}
+
+.destacar{
+    padding:0 2px;
+    background:#a00;
+}
+
+.destacar2{
+    font-weight:bold;
+    text-shadow:1px 1px 3px #111;
+    color:#01888d;
+}
+
+#noresponsive{
+    display:none;
+}
+
+#noresponsive p{
+    background:#444;
+    margin-top:calc(50vh - 30px);
+    padding:15px;
+    font-size:20px;
+    text-align:center;
+}
+
+#notificacion{
+    position:fixed;
+    top:100px;
+    right:340px;
+    width:300px;
+    height:100px;
+    z-index:1000;
+    padding:20px;
+    background:#000;
+    box-shadow:0 0 5px #000;
+    border-radius:5px;
+    font-weight:bold;;
+}
+
+@media screen and (max-width:950px){
+    header, main, #fondocontenedor, footer{
+        display:none;
+    }
+    #noresponsive{
+        display:block;
+        position:fixed;
+        top:0;
+        left:0;
+        width:100vw;
+        height:100vh;
+    }
+}
