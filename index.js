@@ -79,7 +79,7 @@ function guardar(){
                             let pistaMinusculas = pista.value.trim().toLowerCase();
                             pistasItem.push(pistaMinusculas);
                             let fixDuracion = parseInt(duracion[nDuracion].value);
-                            if(fixDuracion > -1 && fixDuracion < 7201){
+                            if(fixDuracion > 0 && fixDuracion < 7201){
                                 duracionPistasItem.push(fixDuracion);
                             }else{
                                 ok = false;
