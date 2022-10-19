@@ -5,14 +5,19 @@ let discos = [];
 //creando una copia del formulario
 let copiaDefault = document.getElementById("formcontenedor").innerHTML;
 
-//MUESTRA UN FORMULARIO PARA CARGAR DISCOS
+/**
+ * muestra el formulario para cargar discos
+*/
 function cargar(){
     let formContendedor = document.getElementById("formcontenedor");
     formContendedor.style.visibility = "visible";
     formContendedor.style.opacity = "1";
 }
 
-//AGREGA OTRA PISTA - USANDO CREATEELEMENT
+/**
+ * agrega otra pista
+ * @returns
+ */
 function agregarPista(){
     let pistas = document.getElementsByClassName("nombrepista");
     let duracion = document.getElementsByClassName("duracion");
@@ -43,7 +48,10 @@ function agregarPista(){
     return inputPista.id;
 }
 
-//GUARDA LOS DATOS
+/**
+ * valida los datos introducidos y los guarda en el array discos
+ * @returns
+ */
 function guardar(){
     let disco = document.getElementById("disco").value.trim();
     let autor = document.getElementById("autor").value.trim();
@@ -114,7 +122,10 @@ function guardar(){
     }
 }
 
-//RESETEA EL FORMULARIO
+/**
+ * resetea el formulario
+ * @returns 
+ */
 function resetForm(){
     //reset formulario
     let reset = document.getElementById("formcontenedor");
@@ -130,7 +141,10 @@ function resetForm(){
 }
 
 
-//REMUEVE ÚLTIMA PISTA AGREGADA
+/**
+ * remueve la última pista agregada
+ * @returns 
+ */
 function quitarPista(){
     let pistas = document.getElementsByClassName("nombrepista");
     let duracion = document.getElementsByClassName("duracion");
@@ -155,7 +169,10 @@ buscador.addEventListener("keypress", (event) => {
     }
 });
 
-//BUSCA POR IDENTIFICADOR O ÁLBUM
+/**
+ * busca por identificador único o por nombre del álbum
+ * @returns 
+ */
 function buscarAlbum(){
     if(discos.length < 1){
         notificar("No hay discos guardados", 2000);
@@ -190,7 +207,11 @@ function buscarAlbum(){
     }
 }
 
-//MUESTRA LOS DISCOS. TODOS O LOS FILTRADOS POR EL BUSCADOR
+/**
+ * muestra los discos filtrados
+ * @param {Array} array un array de objetos con todas las coincidencias o directamente el array discos
+ * @returns 
+ */
 function mostrar(array){
     if(array.length < 1){
         notificar("No hay discos para mostrar", 2000);
@@ -245,14 +266,22 @@ function mostrar(array){
 }
 
 
-//EXTRA. OCULTA LA LISTA DE DISCOS
+/**
+ * oculta los discos
+ * @returns 
+ */
 function ocultarDiscos(){
     let items = document.getElementById("items");
     items.style.left = "-100vw";
     return items.style.left;
 }
 
-//EXTRA PLUS. FUNCIÓN NOTIFICACIÓN
+/**
+ * notifica sobre cualquier evento
+ * @param {String} mensaje mensaje para mostrar
+ * @param {Number} tiempo duración de la notificación
+ * @returns 
+ */
 function notificar(mensaje, tiempo=5000){
     let notificacion = document.createElement("div");
     notificacion.id = "notificacion";
