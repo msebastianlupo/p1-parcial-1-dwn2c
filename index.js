@@ -16,7 +16,7 @@ function cargar(){
 
 /**
  * agrega otra pista
- * @returns
+ * @returns {String} id de la pista agregada
  */
 function agregarPista(){
     let pistas = document.getElementsByClassName("nombrepista");
@@ -50,7 +50,7 @@ function agregarPista(){
 
 /**
  * valida los datos introducidos y los guarda en el array discos
- * @returns
+ * @returns {Object} el disco creado
  */
 function guardar(){
     let disco = document.getElementById("disco").value.trim();
@@ -124,7 +124,7 @@ function guardar(){
 
 /**
  * resetea el formulario
- * @returns 
+ * @returns {Number} 1
  */
 function resetForm(){
     //reset formulario
@@ -143,7 +143,7 @@ function resetForm(){
 
 /**
  * remueve la última pista agregada
- * @returns 
+ * @returns {Number} 1
  */
 function quitarPista(){
     let pistas = document.getElementsByClassName("nombrepista");
@@ -171,7 +171,7 @@ buscador.addEventListener("keypress", (event) => {
 
 /**
  * busca por identificador único o por nombre del álbum
- * @returns 
+ * @returns {null|Object|Array} null si no encuentra. el objeto si lo encuentra por identificador. un array de objetos si encuentra por nombres de disco 
  */
 function buscarAlbum(){
     if(discos.length < 1){
@@ -188,7 +188,7 @@ function buscarAlbum(){
             for(let disco of discos){
                 if(disco.codigo === numero){
                     mostrar([disco])
-                    return disco.codigo;
+                    return disco;
                 }
             }
         }
@@ -210,7 +210,7 @@ function buscarAlbum(){
 /**
  * muestra los discos filtrados
  * @param {Array} array un array de objetos con todas las coincidencias o directamente el array discos
- * @returns 
+ * @returns {Number} cantidad de discos mostrados
  */
 function mostrar(array){
     if(array.length < 1){
@@ -268,7 +268,7 @@ function mostrar(array){
 
 /**
  * oculta los discos
- * @returns 
+ * @returns {String} "-100vw"
  */
 function ocultarDiscos(){
     let items = document.getElementById("items");
@@ -280,7 +280,7 @@ function ocultarDiscos(){
  * notifica sobre cualquier evento
  * @param {String} mensaje mensaje para mostrar
  * @param {Number} tiempo duración de la notificación
- * @returns 
+ * @returns {String} el mensaje que se le ha pasado como argumento
  */
 function notificar(mensaje, tiempo=5000){
     let notificacion = document.createElement("div");
